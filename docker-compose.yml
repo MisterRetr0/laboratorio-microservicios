@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # Backend
+  mi-pepe:
+    build: ./backend
+    expose:
+      - "5000"
+
+  # Frontend
+  mi-sech:
+    build: ./frontend
+    ports:
+      - "8081:3000"
+    depends_on:
+      - mi-pepe
